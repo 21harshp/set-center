@@ -67,7 +67,7 @@ test('Add ', async ({ page }) => {
     await page.waitForTimeout(2000)
     
 })
-
+console.log('hello');
 
 test('Verify data is updated when selecting different warehouse', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
