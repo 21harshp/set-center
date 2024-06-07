@@ -1,0 +1,17 @@
+{
+  "name": "set-centerv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "harsh": "npx playwright test tests/Frontend/ShippingCompany --project chromium --headed",
+    "ankit":"npx playwright test tests/Frontend/ShippingCompany/DriverDatePicker.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.14.2"
+  }
+}
