@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Verify default selection displays data for all warehouses	', async ({ page }) => {
+test('Verify default selection displays data for all warehouses', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -20,7 +20,7 @@ test('Verify default selection displays data for all warehouses	', async ({ page
 
 })
 
-test('Verify data display for selected warehouse from dropdown	', async ({ page }) => {
+test('Verify data display for selected warehouse from dropdown', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -47,7 +47,7 @@ test('Verify data display for selected warehouse from dropdown	', async ({ page 
 
 })
 
-test('Add ', async ({ page }) => {
+test('Add', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -67,7 +67,7 @@ test('Add ', async ({ page }) => {
     await page.waitForTimeout(2000)
     
 })
-console.log('hello');
+
 
 test('Verify data is updated when selecting different warehouse', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
@@ -109,7 +109,7 @@ test('Verify data is consistent with selected warehouse', async ({ page }) => {
 
 })
 
-test.skip('Verify text color change after clicking on goods data	', async ({page}) => {
+test.skip('Verify text color change after clicking on goods data', async ({page}) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -136,4 +136,14 @@ test.skip('Verify text color change after clicking on goods data	', async ({page
     
 })
 
+test('Verify data is consistent with selected warehouse', async ({ page }) => {
+    await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
+    await expect(page).toHaveTitle('セットセンター');
+    await page.locator('#normal_login_username').fill('Username_123');
+    await page.locator('#normal_login_password').fill('123456');
+    await page.locator('button[type="submit"]').click();
+    await expect(page).toHaveURL('https://set-center-mobile.netlify.app/');
+    await page.waitForTimeout(2000)
+
+})

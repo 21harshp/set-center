@@ -1,7 +1,7 @@
 
 
 // Base URL
-const BaseURL = "Base URL Paste here";
+const DriverURL = "https://api.dev.tako-syun.com/api";
 
 
-module.exports = {BaseURL};
+module.exports = {DriverURL};
