@@ -14,7 +14,7 @@ test('try to login without id password', async ({page}) => {
    expect(PasswordEmptyError).toBe('パスワード必須'); 
 })
 
-test.only('driver login page', async ({page}) => {
+test('driver login page', async ({page}) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
     await page.waitForTimeout(1000);
     await expect(page).toHaveTitle('セットセンター');
