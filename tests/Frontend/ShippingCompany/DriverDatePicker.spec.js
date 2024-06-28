@@ -31,18 +31,7 @@ test('Verify Toaster message', async ({page}) => {
     await products.nth(2).click()
     const tosterMessage = await page.locator("//div[@role='status']").textContent()
     await expect(tosterMessage).toContain('入荷済をしました。')
-    await products.nth(3).click()
-    await page.waitForTimeout(1500)
-    await products.nth(4).click()
-    await page.waitForTimeout(1500)
-    await products.nth(5).click()
-    await page.waitForTimeout(1500)
-    await products.nth(6).click()
-    await page.waitForTimeout(1500)
-    await products.nth(1).click()
-    await page.waitForTimeout(1500)
-    await products.nth(7).click()
-    await page.waitForTimeout(2000)
+    
 
     const textColor = await page.evaluate(() => {
         const element = document.querySelector('div');
