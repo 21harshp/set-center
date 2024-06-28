@@ -2,6 +2,7 @@
 
 // Base URL
 const DriverURL = "https://api.dev.tako-syun.com/api";
+const AdminURL = "https://api.dev.tako-syun.com/api"
 //https://api.dev.tako-syun.com/api
 
 
@@ -17,4 +18,4 @@ const TodaysDate = `${year}-${month}-${day}`;
 
 // console.log(formattedDate);
 
-module.exports = {DriverURL, TodaysDate};
+module.exports = {DriverURL, TodaysDate, AdminURL};
