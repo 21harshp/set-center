@@ -1,10 +1,13 @@
 // Base URL
 const ShippingURL = "https://shipping.dev.tako-syun.com/";
 const SupllierURL = "Base URL Paste here";
-const AdminURL = "hq.dev.tako-syun.com/";
+const AdminURL = "https://hq.dev.tako-syun.com/";
 
 const DriverID = 'Harsh01'
 const DriverPassword = 'Harsh@2142'
+
+const AdminID = 'tester.softcolon@gmail.com';
+const AdminPassword = 'Harsh123'
 
 
 const today = new Date();
@@ -19,4 +22,4 @@ const TodaysDate = `${year}-${month}-${day}`;
 
 
 
-module.exports = {ShippingURL, DriverID, DriverPassword, TodaysDate};
+module.exports = { ShippingURL, AdminURL, DriverID, DriverPassword, AdminID, TodaysDate };
