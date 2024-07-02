@@ -11,6 +11,7 @@ test('Verify login with valid predefined ID and password', async ({ page }) => {
     const errorMsg = await page.locator(".ant-form-item-explain-error").textContent();
     expect(errorMsg).toBe('ログイン成功');
 })
+//hello
 
 test('Verify login with invalid ID	', async ({ page }) => {
     await page.goto('https://hq.dev.tako-syun.com/');
