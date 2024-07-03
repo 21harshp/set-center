@@ -2,9 +2,12 @@
 
 // Base URL
 const DriverURL = "https://api.dev.tako-syun.com/api";
-const AdminURL = "https://api.dev.tako-syun.com/api"
+const BaseURL = "https://api.dev.tako-syun.com/api"
 //https://api.dev.tako-syun.com/api
 
+const AdminID = 'tester.softcolon@gmail.com'
+var AdminPassword = 'Harsh@2142'
+var newPassword_admin = 'Harsh123'
 
 const today = new Date();
 
@@ -18,4 +21,4 @@ const TodaysDate = `${year}-${month}-${day}`;
 
 // console.log(formattedDate);
 
-module.exports = {DriverURL, TodaysDate, AdminURL};
+module.exports = { DriverURL, TodaysDate, BaseURL, AdminPassword, newPassword_admin, AdminID };
