@@ -6,8 +6,13 @@ const AdminURL = "https://hq.dev.tako-syun.com/";
 const DriverID = 'Harsh01'
 const DriverPassword = 'Harsh@2142'
 
-const AdminID = 'tester.softcolon@gmail.com';
-const AdminPassword = 'Harsh123'
+const AdminID = 'tester.softcolon@gmail.com'
+
+// var AdminPassword = 'Harsh123'
+// let newPassword_admin = 'Harsh@2142'
+
+var AdminPassword = 'Harsh@2142'
+let newPassword_admin = 'Harsh123'
 
 
 const today = new Date();
@@ -22,4 +27,4 @@ const TodaysDate = `${year}-${month}-${day}`;
 
 
 
-module.exports = { ShippingURL, AdminURL, DriverID, DriverPassword, AdminID, TodaysDate };
+module.exports = { ShippingURL,AdminPassword, AdminURL, DriverID, DriverPassword,newPassword_admin, AdminID, TodaysDate };
