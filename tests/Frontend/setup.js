@@ -1,14 +1,19 @@
-
-
 // Base URL
-const DriverURL = "https://api.dev.tako-syun.com/api";
-const BaseURL = "https://api.dev.tako-syun.com/api"
-//https://api.dev.tako-syun.com/api
+const ShippingURL = "https://shipping.dev.tako-syun.com/";
+const SupllierURL = "Base URL Paste here";
+const AdminURL = "https://hq.dev.tako-syun.com/";
+
+const DriverID = 'Harsh01'
+const DriverPassword = 'Harsh@2142'
 
 const AdminID = 'tester.softcolon@gmail.com'
 
+// var AdminPassword = 'Harsh123'
+// let newPassword_admin = 'Harsh@2142'
+
 var AdminPassword = 'Harsh@2142'
 let newPassword_admin = 'Harsh123'
+
 
 const today = new Date();
 
@@ -20,6 +25,6 @@ const day = String(today.getDate()).padStart(2, '0'); // Get the day and pad wit
 // Combine into the desired format
 const TodaysDate = `${year}-${month}-${day}`;
 
-// console.log(formattedDate);
 
-module.exports = { DriverURL, TodaysDate, BaseURL, AdminPassword, newPassword_admin, AdminID };
+
+module.exports = { ShippingURL,AdminPassword, AdminURL, DriverID, DriverPassword,newPassword_admin, AdminID, TodaysDate };
