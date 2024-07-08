@@ -93,7 +93,7 @@ test('Verify login when email ID field is left empty	', async ({ request }) => {
         // await expect(response.message).toBe('ログイン成功')   
 });
 
-test.only('Verify login when password field is left empty', async ({ request }) => {
+test('Verify login when password field is left empty', async ({ request }) => {
     const Request = await request.post(`${BaseURL}/admin/auth/login`,
         {
             data: {

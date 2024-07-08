@@ -6,8 +6,9 @@ const BaseURL = "https://api.dev.tako-syun.com/api"
 //https://api.dev.tako-syun.com/api
 
 const AdminID = 'tester.softcolon@gmail.com'
+
 var AdminPassword = 'Harsh@2142'
-var newPassword_admin = 'Harsh123'
+let newPassword_admin = 'Harsh123'
 
 const today = new Date();
 
