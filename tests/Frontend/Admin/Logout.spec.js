@@ -1,7 +1,7 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { AdminID, AdminPassword, AdminURL } from '../setup';
 
-test('logout', async ({page}) => {
+test('logout', async ({ page }) => {
     await page.goto(AdminURL);
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);
@@ -12,10 +12,10 @@ test('logout', async ({page}) => {
     await page.waitForTimeout(1000)
 
     await page.locator('.ant-dropdown-menu-title-content').nth(3).click()
-    
+
 })
 
-test('Logout And Verify You are on Login Page', async ({page}) => {
+test('Logout And Verify You are on Login Page', async ({ page }) => {
     await page.goto(AdminURL);
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);
@@ -31,7 +31,7 @@ test('Logout And Verify You are on Login Page', async ({page}) => {
     await expect(page).toHaveURL('https://hq.dev.tako-syun.com/login')
 })
 
-test('After logout verify try to go dashbord url', async ({page}) => {
+test('After logout verify try to go dashbord url', async ({ page }) => {
     await page.goto(AdminURL);
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);

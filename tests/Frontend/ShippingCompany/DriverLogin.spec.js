@@ -25,7 +25,7 @@ test('Login with invalid password (less than 6 characters)', async ({ page }) =>
     const divText = await page.innerText('.ant-form-item-explain-error');
     // await expect(divText).toBe('最低6桁必要');
     await expect(divText).toBe('最低6個必要');
-    
+
     await page.locator('button[type="submit"]').click();
 
     await expect(page).not.toHaveURL('https://set-center-mobile.netlify.app/');
@@ -33,7 +33,7 @@ test('Login with invalid password (less than 6 characters)', async ({ page }) =>
 
 });
 
-test('Login with valid password (more than 6 characters)', async ({page}) => {
+test('Login with valid password (more than 6 characters)', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -44,7 +44,7 @@ test('Login with valid password (more than 6 characters)', async ({page}) => {
     await page.waitForTimeout(2000)
 });
 
-test('Login with blank password', async ({page}) => {
+test('Login with blank password', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -57,13 +57,13 @@ test('Login with blank password', async ({page}) => {
 
     await expect(DriverID).toBe('ドライバーID必須')
     await expect(DriverPassword).toBe('パスワード必須')
-    
+
     // await expect(divText).toBe('最低6桁必要');
 
     await page.waitForTimeout(2000);
 });
 
-test('Login with valid credentials but incorrect username', async ({page}) => {
+test('Login with valid credentials but incorrect username', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -77,7 +77,7 @@ test('Login with valid credentials but incorrect username', async ({page}) => {
     await page.waitForTimeout(2000)
 })
 
-test('Login with valid username but incorrect password', async ({page}) => {
+test('Login with valid username but incorrect password', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
 
     await expect(page).toHaveTitle('セットセンター');
@@ -89,7 +89,7 @@ test('Login with valid username but incorrect password', async ({page}) => {
     const DriverPassword = await page.innerText('#normal_login_password_help');
 
     await expect(DriverPassword).toBe('最低6個必要')
-    
+
     // await expect(divText).toBe('最低6桁必要');
 
     await page.waitForTimeout(2000);
@@ -107,7 +107,7 @@ test('Login with mixed case valid credentials', async ({ page }) => {
 
 });
 
-test.skip('Verify that the currently displayed ID is the ID of the driver who has logged in.', async ({page}) => {
+test.skip('Verify that the currently displayed ID is the ID of the driver who has logged in.', async ({ page }) => {
     await page.goto('https://set-center-mobile.netlify.app/auth/login');
     await expect(page).toHaveTitle('セットセンター');
     await page.locator('#normal_login_username').fill('Username_123');
@@ -117,7 +117,7 @@ test.skip('Verify that the currently displayed ID is the ID of the driver who ha
     //get user ID from driverapp
     const DriverId = await page.locator('.ant-typography.css-1okl62o').nth(1).textContent();
     await expect(DriverId).toBe('１４４４５６７８９０１3')
-    
+
 });
 
 

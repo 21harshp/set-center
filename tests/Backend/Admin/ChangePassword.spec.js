@@ -45,8 +45,8 @@ test('Verify with the wrong accessToken', async ({ request }) => {
         })
     const response = await Response.json()
 
-    expect(response.status).toBe(400);
-    expect(response.message).toBe('資格情報が間違っています');
+    expect(response.status).toBe(401);
+    expect(response.message).toBe('無効なトークンです。もう一度ログインしてください！');
 })
 
 test('New Password Same as Old Password', async ({ request }) => {
@@ -59,7 +59,7 @@ test('New Password Same as Old Password', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${accessToken}` }
         })
     const response = await Response.json();
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(401);
     expect(response.message).toBe('以前のパスワードと同じパスワードは使用できません');
 })
 
@@ -73,7 +73,7 @@ test('Missing Old Password', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${accessToken}` }
         })
     const response = await Response.json();
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(401);
     expect(response.message).toBe('以前のパスワードと同じパスワードは使用できません');
 })
 
@@ -87,7 +87,7 @@ test('Missing New Password', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${accessToken}` }
         })
     const response = await Response.json();
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(401);
     expect(response.message).toBe('以前のパスワードと同じパスワードは使用できません');
 })
 
@@ -115,7 +115,6 @@ test('Weak New Password', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${accessToken}` }
         })
     const response = await Response.json();
-    console.log(response);
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(401);
     // expect(response.message).toBe('以前のパスワードと同じパスワードは使用できません');
 })

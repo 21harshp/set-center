@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "harsh": "npx playwright test tests/Frontend/ShippingCompany --project chromium --headed",
-    "ankit":"npx playwright test tests/Frontend/ShippingCompany/DriverDatePicker.spec.js"
+    "test:sequential": "playwright test --workers=1 tests/Backend/Driver/Login.spec.js  tests/Backend/Driver/Profile.spec.js  tests/Backend/Driver/ChangePassword.spec.js"
   },
   "keywords": [],
   "author": "",

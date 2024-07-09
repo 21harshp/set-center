@@ -1,32 +1,32 @@
 import { test, expect } from '@playwright/test'
-import { AdminURL } from '../../setup';
+import { AdminID, AdminPassword, BaseURL } from '../../setup';
 
-let accessToken
+let AccessToken
 let id
 
 test('LoginAdmin', async ({ request }) => {
-    const Response = await request.post(`${AdminURL}/admin/auth/login`,
+    const Response = await request.post(`${BaseURL}/admin/auth/login`,
         {
             data: {
-                "email": "tester.softcolon@gmail.com",
-                "password": "P@ssword"
+                "email": AdminID,
+                "password": AdminPassword
             },
-            headers: { "Accept": "*/*" }
+            headers: { "Accept": "application/json" }
         })
     const response = await Response.json()
-    accessToken = response.data.accessToken;
-    id = response.data.id;
+    AccessToken = await response.data.accessToken;
+    id = await response.data.id;
 });
 
-test('costomerList', async ({request}) => {
+test('costomerList', async ({ request }) => {
     const params = new URLSearchParams({
         limit: 3000,
-        skip:1  
+        skip: 1
     })
-    const Response = await request.post(`${AdminURL}/admin/auth/login`,
-    {
-        headers: { "Accept": "*/*" }
-    })
+    const Response = await request.post(`${BaseURL}/admin/auth/login${params.toString()}`,
+        {
+            headers: { "Accept": "application/json", 'Authorization': `Bearer ${AccessToken}` }
+        })
 
     console.log(Response.json());
 })

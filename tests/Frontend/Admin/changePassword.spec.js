@@ -1,8 +1,8 @@
-import {test,expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { AdminID, AdminPassword, AdminURL, newPassword_admin } from '../setup';
 
 
-test('Verify With Wrong Old Password', async ({page}) => {
+test('Verify With Wrong Old Password', async ({ page }) => {
     await page.goto(AdminURL)
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);
@@ -26,7 +26,7 @@ test('Verify With Wrong Old Password', async ({page}) => {
 
 })
 
-test('Verify With Newpassword And Conformpassword are diffrents', async ({page}) => {
+test('Verify With Newpassword And Conformpassword are diffrents', async ({ page }) => {
     await page.goto(AdminURL)
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);
@@ -50,7 +50,7 @@ test('Verify With Newpassword And Conformpassword are diffrents', async ({page})
 
 })
 
-test('change password sucessfully', async ({page}) => {
+test('change password sucessfully', async ({ page }) => {
     await page.goto(AdminURL)
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(AdminPassword);
@@ -75,7 +75,7 @@ test('change password sucessfully', async ({page}) => {
     await page.waitForTimeout(8000);
 })
 
-test('Verify after sucessfull password change Admin is loggedout', async ({page}) => {
+test('Verify after sucessfull password change Admin is loggedout', async ({ page }) => {
     await page.goto(AdminURL)
     await page.locator('#normal_login_email').fill(AdminID);
     await page.locator('#normal_login_password').fill(newPassword_admin);

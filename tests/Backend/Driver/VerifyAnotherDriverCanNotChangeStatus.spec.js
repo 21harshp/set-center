@@ -88,5 +88,4 @@ test('Try to change status from athor Driver to not-shiped', async ({ request })
     // await expect(Response.status).toBe(200);
     // await expect(Response.message).toBe('注文が正常に更新されました');
     // await expect(Response.data.shipping_status).toBe('NOT_SHIPPED');
-    console.log(Response);
 })

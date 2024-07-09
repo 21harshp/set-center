@@ -1,6 +1,6 @@
 
 var sucessLogin = 'ログイン成功'
-var IDandPasswordDoseNotMatch = 'ドライバーIDまたはパスワードが正しくありません。もう一度お試しください。'
+var IDandPasswordDoseNotMatch = 'メールアドレスまたはパスワードが正しくありません'
 var LoginFail = 'ログインに失敗しました'
 
 module.exports = { sucessLogin, LoginFail, IDandPasswordDoseNotMatch };

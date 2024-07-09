@@ -14,13 +14,10 @@ test.skip('Drag And Drop', async ({page}) => {
 
         await To1.hover()
         await page.mouse.up()
-        console.log('+65+656+5+65');
+        
     } else {
         console.error('dfiubdiuwfhuih')
     }
-    
-
-    await page.waitForTimeout(5000);
 })
 
 test('dummy site', async ({page}) => {
@@ -34,6 +31,5 @@ test('dummy site', async ({page}) => {
 
     await target.hover()
     await page.mouse.up()
-    await page.waitForTimeout(5000); 
 
 })

@@ -6,7 +6,7 @@ let accessToken;
 let AccessToken = 'L5g7uy5gJG5SD5Hksuj5hd5i'
 let id;
 
-test.only('LoginAdmin', async ({ request }) => {
+test('LoginAdmin', async ({ request }) => {
     const Response = await request.post(`${BaseURL}/admin/auth/login`,
         {
             data: {
@@ -44,7 +44,7 @@ test('Unauthenticated User', async ({ request }) => {
     expect(response.status).toBe(401)
 });
 
-test.only('Invalid Token', async ({ request }) => {
+test('Invalid Token', async ({ request }) => {
     const Response = await request.get(`${BaseURL}/admin/profile`,
         {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${AccessToken}` }

@@ -34,6 +34,6 @@ test('Verify to change status', async ({ page }) => {
         return styles.backgroundColor;
     });
 
-    console.log('Background color:', backgroundColor);
+    
 });
 

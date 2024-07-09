@@ -1,4 +1,4 @@
-import {test, expect} from '@playwright/test'
+import { test, expect } from '@playwright/test'
 import { DriverURL } from '../setup'
 
 let AccessToken
@@ -16,9 +16,6 @@ test('login driver', async ({ request }) => {
     AccessToken = res.data.accessToken;
     await expect(res.status).toBe(200);
 
-    localStorage.setItem('accesstoken', AccessToken)
-                                                                  
-
 })
 
 test('Verify Data Display for Selected Warehouse from Dropdown	', async ({ request }) => {
@@ -27,7 +24,7 @@ test('Verify Data Display for Selected Warehouse from Dropdown	', async ({ reque
         shippingStatus: 'IN_STOCK,NOT_SHIPPED',
         skip: 1,
         limit: 3000,
-        deliveryPlaceCode : [2,1,0]
+        deliveryPlaceCode: [2, 1, 0]
     })
     const response = await request.get(`${DriverURL}/driver/order/list?${params.toString()}`,
         {
@@ -43,7 +40,7 @@ test('Verify Data Display for Selected Warehouse from Dropdown	', async ({ reque
 
     // Response.data.map(async(h)=> await expect(h.order.delivery_place.ikisaki_code).toBe(1 || 2));
     // Response.data.map(async(h)=> await expect(h.order.delivery_place.ikisaki_name).toBe('引き取り'));
-    
+
     // Response.data.map(async(h)=> await expect([0, 1]).toContain((h.order.delivery_place.ikisaki_code)));
     //expect([0, 1]).toContain(ikisaki_code);
 
@@ -57,7 +54,7 @@ test('Verify Data is Updated When Selecting Different Warehouse	', async ({ requ
         shippingStatus: 'IN_STOCK,NOT_SHIPPED',
         skip: 1,
         limit: 3000,
-        deliveryPlaceCode : [3,4]
+        deliveryPlaceCode: [3, 4]
     })
     const response = await request.get(`${DriverURL}/driver/order/list?${params.toString()}`,
         {
@@ -67,7 +64,7 @@ test('Verify Data is Updated When Selecting Different Warehouse	', async ({ requ
     //  console.log(Response.data.map((h)=> h.order.delivery_place.ikisaki_code));
     Response.data.map(async (h) => {
         const code = h.order.delivery_place.ikisaki_code;
-        await expect(code === 3 || code === 4 ).toBe(true);
+        await expect(code === 3 || code === 4).toBe(true);
     });
 
 })

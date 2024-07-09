@@ -47,11 +47,10 @@ test('change status to in-stock', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${AccessToken}` }
         })
 
-        const Response = await response.json()
-        await expect(Response.status).toBe(200);
-        // await expect(Response.message).toBe('注文が正常に更新されました');
-        // await expect(Response.data.shipping_status).toBe('IN_STOCK');
-        console.log(Response);
+    const Response = await response.json()
+    await expect(Response.status).toBe(200);
+    // await expect(Response.message).toBe('注文が正常に更新されました');
+    // await expect(Response.data.shipping_status).toBe('IN_STOCK');
 })
 
 // test('Verify Status to in-stock', async ({ request }) => {
@@ -82,9 +81,8 @@ test('change status to not-shiped', async ({ request }) => {
             headers: { "Accept": "application/json", 'Authorization': `Bearer ${AccessToken}` }
         })
 
-        const Response = await response.json()
-        await expect(Response.status).toBe(200);
-        // await expect(Response.message).toBe('注文が正常に更新されました');
-        // await expect(Response.data.shipping_status).toBe('NOT_SHIPPED');
-        console.log(Response);
+    const Response = await response.json()
+    await expect(Response.status).toBe(200);
+    // await expect(Response.message).toBe('注文が正常に更新されました');
+    // await expect(Response.data.shipping_status).toBe('NOT_SHIPPED');
 })

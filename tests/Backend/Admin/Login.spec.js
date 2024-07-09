@@ -13,13 +13,13 @@ test('Verify login with valid predefined ID and password', async ({ request }) =
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(200)
-        await expect(response.message).toBe('ログイン成功')
+    const response = await Request.json()
+    await expect(response.status).toBe(200)
+    await expect(response.message).toBe('ログイン成功')
 
-        accessToken = response.data.accessToken
-        
-        // console.log(response);
+    accessToken = response.data.accessToken
+
+    // console.log(response);
 });
 
 test('Verify login with invalid ID	', async ({ request }) => {
@@ -31,10 +31,10 @@ test('Verify login with invalid ID	', async ({ request }) => {
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(400)
-        await expect(response.message).toBe('ログインに失敗しました')
-        
+    const response = await Request.json()
+    await expect(response.status).toBe(400)
+    await expect(response.message).toBe('ログインに失敗しました')
+
 });
 
 test('Verify login with invalid password		', async ({ request }) => {
@@ -46,9 +46,9 @@ test('Verify login with invalid password		', async ({ request }) => {
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(400)
-        await expect(response.message).toBe('ログインに失敗しました')     
+    const response = await Request.json()
+    await expect(response.status).toBe(400)
+    await expect(response.message).toBe('ログインに失敗しました')
 });
 
 test('Verify password validation for less than 6 characters	', async ({ request }) => {
@@ -60,9 +60,9 @@ test('Verify password validation for less than 6 characters	', async ({ request 
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(400)
-        await expect(response.message).toBe('ログインに失敗しました')     
+    const response = await Request.json()
+    await expect(response.status).toBe(400)
+    await expect(response.message).toBe('ログインに失敗しました')
 });
 
 test('Verify login with password more than 6 characters	', async ({ request }) => {
@@ -74,9 +74,9 @@ test('Verify login with password more than 6 characters	', async ({ request }) =
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(200)
-        await expect(response.message).toBe('ログイン成功')   
+    const response = await Request.json()
+    await expect(response.status).toBe(200)
+    await expect(response.message).toBe('ログイン成功')
 });
 
 test('Verify login when email ID field is left empty	', async ({ request }) => {
@@ -88,9 +88,9 @@ test('Verify login when email ID field is left empty	', async ({ request }) => {
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(400)
-        // await expect(response.message).toBe('ログイン成功')   
+    const response = await Request.json()
+    await expect(response.status).toBe(400)
+    // await expect(response.message).toBe('ログイン成功')   
 });
 
 test('Verify login when password field is left empty', async ({ request }) => {
@@ -102,9 +102,9 @@ test('Verify login when password field is left empty', async ({ request }) => {
             },
             headers: { "Accept": "application/json" }
         });
-        const response = await Request.json()
-        await expect(response.status).toBe(400)
-        // await expect(response.message).toBe('ログイン成功')   
+    const response = await Request.json()
+    await expect(response.status).toBe(400)
+    // await expect(response.message).toBe('ログイン成功')   
 });
 
 

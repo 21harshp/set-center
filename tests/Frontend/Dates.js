@@ -41,7 +41,4 @@ function getNextWeekDates() {
     return getWeekDates(today);
 }
 
-// Example usage:
-console.log("This week dates:", getThisWeekDates());
-console.log("Last week dates:", getLastWeekDates());
-console.log("Next week dates:", getNextWeekDates());
+
